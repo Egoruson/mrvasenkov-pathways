@@ -21,7 +21,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 hero-gradient border-b border-primary/20 backdrop-blur-sm">
       <div className="container flex items-center justify-between h-16">
-        <img src={logo} alt="ETRADE LTD" className="h-14 w-auto py-1" />
+        <div className="h-full flex items-center -ml-2">
+          <img src={logo} alt="ETRADE LTD" className="h-16 w-auto object-contain" style={{ mixBlendMode: 'lighten' }} />
+        </div>
 
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
