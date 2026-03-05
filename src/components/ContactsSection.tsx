@@ -18,6 +18,12 @@ const ContactsSection = () => {
                   690069, Приморский край, г. Владивосток, ул. Давыдова, д. 14
                 </p>
               </div>
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                <a href="mailto:gm@etradeiss.ru" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                  gm@etradeiss.ru
+                </a>
+              </div>
             </div>
 
             <div className="card-dark rounded-xl p-5 space-y-2 text-sm">
