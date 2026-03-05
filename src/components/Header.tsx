@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo-original.jpg";
+import logo from "@/assets/logo-white.png";
 
 const navItems = [
   { label: "О КОМПАНИИ", href: "#about" },
@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 hero-gradient border-b border-primary/20 backdrop-blur-sm">
       <div className="container flex items-center justify-between h-16">
-        <img src={logo} alt="ETRADE LTD" className="h-14 w-auto py-1" style={{ mixBlendMode: "lighten" }} />
+        <img src={logo} alt="ETRADE LTD" className="h-12 w-auto" />
 
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (

@@ -49,7 +49,7 @@ const ProductsSection = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section id="products" className="py-20 bg-muted">
+    <section id="products" className="py-14 bg-muted">
       <div className="container">
         <h2 className="text-2xl md:text-4xl font-bold text-foreground text-center mb-12">
           Товары

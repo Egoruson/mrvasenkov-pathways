@@ -12,7 +12,7 @@ const QuizSection = () => {
   }, []);
 
   return (
-    <section id="quiz" className="py-20 bg-muted">
+    <section id="quiz" className="py-14 bg-muted">
       <div className="container max-w-2xl">
         <h2 className="text-2xl md:text-4xl font-bold text-foreground text-center mb-4">
           Отправить запрос

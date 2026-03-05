@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <section className="hero-gradient pt-32 pb-20 md:pb-28">
+    <section className="hero-gradient pt-28 pb-14 md:pb-20">
       <div className="container text-center">
         <h1 className="text-3xl md:text-5xl font-extrabold text-primary-foreground leading-tight mb-6">
           ООО «ЕТРЕЙД»: Ваш надежный мост в Китай
