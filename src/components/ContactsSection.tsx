@@ -29,7 +29,7 @@ const ContactsSection = () => {
 
           <div className="rounded-xl overflow-hidden border border-border h-80">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=131.945,43.176&z=16&pt=131.945,43.176,pm2rdm"
+              src="https://yandex.ru/map-widget/v1/?ll=131.920438,43.172475&z=16&pt=131.920438,43.172475,pm2rdm"
               width="100%"
               height="100%"
               style={{ border: 0 }}
