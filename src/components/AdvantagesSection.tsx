@@ -12,7 +12,7 @@ const advantages = [
 ];
 
 const AdvantagesSection = () => (
-  <section className="py-20 bg-background">
+  <section className="py-14 bg-background">
     <div className="container">
       <h2 className="text-2xl md:text-4xl font-bold text-foreground text-center mb-12">
         Преимущества импорта с нашей компанией
