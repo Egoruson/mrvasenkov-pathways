@@ -40,6 +40,7 @@
     --card-dark-fg: 210 20% 90%;
     --cta-gradient: linear-gradient(135deg, hsl(38 90% 55%), hsl(30 90% 50%));
     --cta-hover: linear-gradient(135deg, hsl(38 90% 50%), hsl(30 90% 45%));
+    --cta: 38 90% 55%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 213 50% 15%;
