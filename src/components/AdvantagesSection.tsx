@@ -20,7 +20,7 @@ const AdvantagesSection = () => (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {advantages.map((a) => (
           <div key={a.title} className="card-dark rounded-xl p-5">
-            <a.icon className="w-8 h-8 mb-3 text-card-dark-foreground/80" />
+            <a.icon className="w-8 h-8 mb-3 text-cta" />
             <h3 className="text-sm md:text-base font-semibold text-card-dark-foreground mb-2 break-words">{a.title}</h3>
             <p className="text-xs md:text-sm text-card-dark-foreground/60 leading-relaxed">{a.desc}</p>
           </div>
