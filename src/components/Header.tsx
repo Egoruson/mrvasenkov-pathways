@@ -36,12 +36,14 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => scrollTo("#quiz")}
+          <a
+            href="https://t.me/vasenkov"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-flex cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm transition-all"
           >
             КОНСУЛЬТАЦИЯ
-          </button>
+          </a>
 
           <button
             className="md:hidden text-primary-foreground"
@@ -64,12 +66,14 @@ const Header = () => {
             </button>
           ))}
           <div className="px-6 pt-2">
-            <button
-              onClick={() => scrollTo("#quiz")}
-              className="w-full cta-gradient text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm"
+            <a
+              href="https://t.me/vasenkov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center cta-gradient text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm"
             >
               КОНСУЛЬТАЦИЯ
-            </button>
+            </a>
           </div>
         </div>
       )}
