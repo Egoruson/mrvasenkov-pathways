@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
 
 const ContactsSection = () => {
   return (
@@ -22,6 +22,12 @@ const ContactsSection = () => {
                 <Mail className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <a href="mailto:gm@etradeiss.ru" className="text-muted-foreground text-sm hover:text-primary transition-colors">
                   gm@etradeiss.ru
+                </a>
+              </div>
+              <div className="flex items-start gap-3">
+                <Send className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                <a href="https://t.me/vasenkov" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                  Написать в Telegram
                 </a>
               </div>
             </div>
