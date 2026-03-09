@@ -32,7 +32,7 @@ const ContactsSection = () => {
               </div>
             </div>
 
-            <div className="card-dark rounded-xl p-5 space-y-2 text-sm">
+            <div className="hero-gradient rounded-xl p-5 space-y-2 text-sm">
               <p className="text-card-dark-foreground/70"><span className="text-card-dark-foreground font-medium">ИНН:</span> 2543174349</p>
               <p className="text-card-dark-foreground/70"><span className="text-card-dark-foreground font-medium">КПП:</span> 254301001</p>
               <p className="text-card-dark-foreground/70"><span className="text-card-dark-foreground font-medium">ОГРН:</span> 1232500008454</p>
