@@ -9,7 +9,7 @@ const ContactsSection = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-6">
+          <div className="md:flex md:flex-col md:justify-between space-y-6">
             <h3 className="text-xl font-semibold text-foreground">ООО &quot;ЕТРЕЙД&quot;</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
