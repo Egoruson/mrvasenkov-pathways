@@ -1,5 +1,5 @@
-import heroBgDesktop from "@/assets/hero-bg-desktop.png";
-import heroBgMobile from "@/assets/hero-bg-mobile.png";
+import heroBgDesktop from "@/assets/hero-bg-desktop.jpg";
+import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 
 const HeroSection = () => {
   return (
