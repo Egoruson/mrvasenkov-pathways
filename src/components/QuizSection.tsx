@@ -23,7 +23,8 @@ const QuizSection = () => {
             frameBorder="0"
             width="100%"
             height="700"
-            style={{ border: "none" }}
+            scrolling="no"
+            style={{ border: "none", height: "700px", minHeight: "700px", maxHeight: "700px", overflow: "hidden" }}
           />
         </div>
       </div>
