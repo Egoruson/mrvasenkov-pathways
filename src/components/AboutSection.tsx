@@ -20,7 +20,7 @@ const stages = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-14 bg-background">
       <div className="container">
         <h2 className="text-2xl md:text-4xl font-bold text-foreground text-center mb-6">
           О компании
@@ -41,7 +41,7 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {stages.map((s) => (
             <div key={s.title} className="card-dark rounded-xl p-6">
-              <s.icon className="w-10 h-10 mb-4 text-card-dark-foreground" />
+              <s.icon className="w-10 h-10 mb-4 text-cta" />
               <h4 className="text-lg font-semibold text-card-dark-foreground mb-2">{s.title}</h4>
               <p className="text-card-dark-foreground/70 text-sm leading-relaxed">{s.text}</p>
             </div>

@@ -1,11 +1,28 @@
+import heroBgDesktop from "@/assets/hero-bg-desktop.png";
+import heroBgMobile from "@/assets/hero-bg-mobile.png";
+
 const HeroSection = () => {
   return (
-    <section className="hero-gradient pt-32 pb-20 md:pb-28">
-      <div className="container text-center">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-primary-foreground leading-tight mb-6">
+    <section className="relative pt-28 pb-14 md:pb-20 overflow-hidden">
+      {/* Desktop background */}
+      <img
+        src={heroBgDesktop}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+      />
+      {/* Mobile background */}
+      <img
+        src={heroBgMobile}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover md:hidden"
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="container text-center relative z-10">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
           ООО «ЕТРЕЙД»: Ваш надежный мост в Китай
         </h1>
-        <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8">
+        <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8">
           Промышленные поставки, логистика и таможенное оформление — полный цикл импорта из Китая
         </p>
         <button

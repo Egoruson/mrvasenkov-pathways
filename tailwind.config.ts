@@ -51,6 +51,7 @@ export default {
           DEFAULT: "hsl(var(--card-dark-bg))",
           foreground: "hsl(var(--card-dark-fg))",
         },
+        cta: "hsl(var(--cta))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

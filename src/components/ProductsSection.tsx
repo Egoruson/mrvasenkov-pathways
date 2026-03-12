@@ -49,7 +49,7 @@ const ProductsSection = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section id="products" className="py-20 bg-muted">
+    <section id="products" className="py-14 bg-muted">
       <div className="container">
         <h2 className="text-2xl md:text-4xl font-bold text-foreground text-center mb-12">
           Товары
@@ -62,7 +62,7 @@ const ProductsSection = () => {
               onClick={() => setSelected(i)}
               className="card-dark rounded-xl p-5 text-left hover:scale-[1.03] transition-transform cursor-pointer group"
             >
-              <p.icon className="w-8 h-8 mb-3 text-card-dark-foreground/80 group-hover:text-card-dark-foreground transition-colors" />
+              <p.icon className="w-8 h-8 mb-3 text-cta group-hover:text-cta transition-colors" />
               <h3 className="text-sm md:text-base font-semibold text-card-dark-foreground">{p.title}</h3>
             </button>
           ))}
