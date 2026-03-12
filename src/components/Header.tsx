@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo-white.png";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "О КОМПАНИИ", href: "#about" },
@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 hero-gradient border-b border-primary/20 backdrop-blur-sm">
       <div className="container flex items-center justify-between h-16">
-        <img src={logo} alt="ETRADE LTD" className="h-12 w-auto" />
+        <img src={logo} alt="ETRADE LTD" className="h-14 w-auto py-1" />
 
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
@@ -36,14 +36,12 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href="https://t.me/vasenkov"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => scrollTo("#quiz")}
             className="hidden md:inline-flex cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm transition-all"
           >
             КОНСУЛЬТАЦИЯ
-          </a>
+          </button>
 
           <button
             className="md:hidden text-primary-foreground"
@@ -66,14 +64,12 @@ const Header = () => {
             </button>
           ))}
           <div className="px-6 pt-2">
-            <a
-              href="https://t.me/vasenkov"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center cta-gradient text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm"
+            <button
+              onClick={() => scrollTo("#quiz")}
+              className="w-full cta-gradient text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm"
             >
               КОНСУЛЬТАЦИЯ
-            </a>
+            </button>
           </div>
         </div>
       )}
