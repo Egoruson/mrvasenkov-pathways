@@ -46,7 +46,7 @@ const Header = () => {
           </a>
 
           <button
-            className="md:hidden text-primary-foreground"
+            className="lg:hidden text-primary-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
