@@ -23,7 +23,7 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16">
         <img src={logo} alt="ETRADE LTD" className="h-12 w-auto" />
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <button
               key={item.href}
