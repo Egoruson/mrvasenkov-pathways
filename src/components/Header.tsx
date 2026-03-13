@@ -40,7 +40,7 @@ const Header = () => {
             href="https://t.me/vasenkov"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm transition-all"
+            className="hidden lg:inline-flex cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm transition-all"
           >
             КОНСУЛЬТАЦИЯ
           </a>
