@@ -55,7 +55,7 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden hero-gradient border-t border-primary-foreground/10 pb-4">
+        <div className="lg:hidden hero-gradient border-t border-primary-foreground/10 pb-4">
           {navItems.map((item) => (
             <button
               key={item.href}
