@@ -60,7 +60,7 @@ const CookieConsent = () => {
         <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 100% / 0.9)" }}>
           Продолжая пользоваться сайтом, вы даете согласие на обработку файлов cookie и других пользовательских данных в соответствии с{" "}
           <a
-            href="https://moclients.com/quiz/6bb7812c?type=frame"
+            href="/privacy"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2"
