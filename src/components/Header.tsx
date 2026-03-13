@@ -23,7 +23,7 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16">
         <img src={logo} alt="ETRADE LTD" className="h-12 w-auto" />
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <button
               key={item.href}
@@ -40,13 +40,13 @@ const Header = () => {
             href="https://t.me/vasenkov"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm transition-all"
+            className="hidden lg:inline-flex cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-semibold px-5 py-2 rounded-lg text-sm transition-all"
           >
             КОНСУЛЬТАЦИЯ
           </a>
 
           <button
-            className="md:hidden text-primary-foreground"
+            className="lg:hidden text-primary-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -55,7 +55,7 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden hero-gradient border-t border-primary-foreground/10 pb-4">
+        <div className="lg:hidden hero-gradient border-t border-primary-foreground/10 pb-4">
           {navItems.map((item) => (
             <button
               key={item.href}
