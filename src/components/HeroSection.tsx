@@ -1,28 +1,61 @@
 import heroBgDesktop from "@/assets/hero-bg-desktop.jpg";
 import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 
+const words = [
+  "оборудования",
+  "автомобилей",
+  "спецтехники",
+  "запчастей",
+  "товаров",
+  "огнеупоров",
+  "ферросплавов",
+  "сырья",
+  "пресс форм",
+];
+
 const HeroSection = () => {
   return (
     <section className="relative pt-28 pb-14 md:pb-20 overflow-hidden">
-      {/* Desktop background */}
       <img
         src={heroBgDesktop}
         alt=""
         className="absolute inset-0 w-full h-full object-cover hidden md:block"
       />
-      {/* Mobile background */}
       <img
         src={heroBgMobile}
         alt=""
         className="absolute inset-0 w-full h-full object-cover md:hidden"
       />
-      {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/50" />
       <div className="container text-center relative z-10">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
-          ООО «ЕТРЕЙД»: Ваш надежный мост в Китай
+        <h1 className="text-3xl md:text-5xl font-extrabold text-primary-foreground leading-tight mb-4">
+          ООО «ЕТРЕЙД»
         </h1>
-        <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8">
+
+        {/* Animated word scroller */}
+        <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 flex-col md:flex-row">
+          <span className="text-xl md:text-[clamp(20px,3vw,34px)] font-medium text-primary-foreground whitespace-nowrap">
+            Ваш надёжный поставщик
+          </span>
+          <div
+            className="relative overflow-hidden"
+            style={{ height: "1.2em", lineHeight: "1.2em" }}
+          >
+            <div className="flex flex-col animate-[scrollWords_18s_linear_infinite]">
+              {[...words, ...words].map((word, i) => (
+                <span
+                  key={i}
+                  className="text-xl md:text-[clamp(20px,3vw,34px)] font-medium text-primary-foreground flex items-center"
+                  style={{ height: "1.2em" }}
+                >
+                  {word}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
           Промышленные поставки, логистика и таможенное оформление — полный цикл импорта из Китая
         </p>
         <button
