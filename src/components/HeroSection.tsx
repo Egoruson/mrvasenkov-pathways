@@ -36,27 +36,28 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover md:hidden"
       />
       <div className="absolute inset-0 bg-black/50" />
-      <div className="container text-center relative z-10">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-primary-foreground leading-tight mb-4">
+      <div className="container relative z-10">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-primary-foreground leading-tight mb-4 text-center">
           ООО «ЕТРЕЙД»
         </h1>
 
-        {/* Animated word scroller */}
-        <div className="word-scroller-loader">
-          <span className="word-scroller-title">Ваш надёжный поставщик</span>
-          <div className="word-scroller-words">
-            <div className="word-scroller-track">
-              {words.map((word, i) => (
-                <span key={i} className="word-scroller-word">
-                  {word}
-                </span>
-              ))}
+        <div className="max-w-3xl mx-auto">
+          {/* Animated word scroller */}
+          <div className="word-scroller-loader">
+            <span className="word-scroller-title">Ваш надёжный поставщик</span>
+            <div className="word-scroller-words">
+              <div className="word-scroller-track">
+                {words.map((word, i) => (
+                  <span key={i} className="word-scroller-word">
+                    {word}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8 mt-6">
-          Промышленные поставки, логистика и таможенное оформление — полный цикл импорта из Китая
+          <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 mt-6">
+            Промышленные поставки, логистика и таможенное оформление — полный цикл импорта из Китая
         </p>
         <button
           onClick={() => document.querySelector("#quiz")?.scrollIntoView({ behavior: "smooth" })}
