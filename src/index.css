@@ -100,7 +100,7 @@
 .product-card-icon {
   width: 2rem;
   height: 2rem;
-  color: hsl(var(--primary));
+  color: hsl(var(--cta));
   position: relative;
   z-index: 10;
   transition: color 0.5s ease;
