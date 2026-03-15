@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import heroBgDesktop from "@/assets/hero-bg-desktop.jpg";
 import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 
@@ -14,6 +15,15 @@ const words = [
 ];
 
 const HeroSection = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-28 pb-14 md:pb-20 overflow-hidden">
       <img
@@ -41,8 +51,15 @@ const HeroSection = () => {
             className="relative overflow-hidden"
             style={{ height: "1.2em", lineHeight: "1.2em" }}
           >
-            <div className="flex flex-col" style={{ animation: "scrollWords 27s linear infinite" }}>
-              {[...words, ...words].map((word, i) => (
+            <div
+              className="flex flex-col"
+              style={{
+                transform: `translateY(-${index * 1.2}em)`,
+                transition: "transform 0.5s ease",
+                willChange: "transform",
+              }}
+            >
+              {words.map((word, i) => (
                 <span
                   key={i}
                   className="text-xl md:text-[clamp(20px,3vw,34px)] font-medium text-primary-foreground flex items-center"
