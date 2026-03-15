@@ -1,4 +1,5 @@
 import { Handshake, ThumbsUp, Warehouse, HelpCircle, ShieldCheck, Scale, Clock, FileText } from "lucide-react";
+import CanvasFractalGrid from "./CanvasFractalGrid";
 
 const advantages = [
   { icon: Handshake, title: "Представительство в Китае", desc: "Прямое присутствие наших специалистов в Китае гарантирует оперативное решение любых вопросов и полное сопровождение сделок." },
@@ -12,8 +13,20 @@ const advantages = [
 ];
 
 const AdvantagesSection = () => (
-  <section className="py-14 bg-background">
-    <div className="container">
+  <section className="py-14 bg-background relative overflow-hidden">
+    <CanvasFractalGrid
+      dotSize={3}
+      dotSpacing={25}
+      dotOpacity={0.2}
+      enableNoise={false}
+      enableMouseGlow={true}
+      enableGradient={false}
+      dotColor="rgba(30, 58, 95, 1)"
+      glowColor="rgba(30, 58, 95, 1)"
+      waveIntensity={20}
+      waveRadius={150}
+    />
+    <div className="container relative z-10">
       <h2 className="text-2xl md:text-4xl font-bold text-foreground text-center mb-12">
         Преимущества импорта с нашей компанией
       </h2>
