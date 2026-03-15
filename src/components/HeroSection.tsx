@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import heroBgDesktop from "@/assets/hero-bg-desktop.jpg";
 import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 
@@ -12,18 +11,18 @@ const words = [
   "ферросплавов",
   "сырья",
   "пресс форм",
+  "оборудования",
+  "автомобилей",
+  "спецтехники",
+  "запчастей",
+  "товаров",
+  "огнеупоров",
+  "ферросплавов",
+  "сырья",
+  "пресс форм",
 ];
 
 const HeroSection = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % words.length);
-    }, 1500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative pt-28 pb-14 md:pb-20 overflow-hidden">
       <img
@@ -43,28 +42,12 @@ const HeroSection = () => {
         </h1>
 
         {/* Animated word scroller */}
-        <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 flex-col md:flex-row">
-          <span className="text-xl md:text-[clamp(20px,3vw,34px)] font-medium text-primary-foreground whitespace-nowrap">
-            Ваш надёжный поставщик
-          </span>
-          <div
-            className="relative overflow-hidden"
-            style={{ height: "1.2em", lineHeight: "1.2em" }}
-          >
-            <div
-              className="flex flex-col"
-              style={{
-                transform: `translateY(-${index * 1.2}em)`,
-                transition: "transform 0.5s ease",
-                willChange: "transform",
-              }}
-            >
+        <div className="word-scroller-loader">
+          <span className="word-scroller-title">Ваш надёжный поставщик</span>
+          <div className="word-scroller-words">
+            <div className="word-scroller-track">
               {words.map((word, i) => (
-                <span
-                  key={i}
-                  className="text-xl md:text-[clamp(20px,3vw,34px)] font-medium text-primary-foreground flex items-center"
-                  style={{ height: "1.2em" }}
-                >
+                <span key={i} className="word-scroller-word">
                   {word}
                 </span>
               ))}
@@ -72,7 +55,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
+        <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8 mt-6">
           Промышленные поставки, логистика и таможенное оформление — полный цикл импорта из Китая
         </p>
         <button

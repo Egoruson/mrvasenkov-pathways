@@ -84,44 +84,88 @@
   }
 }
 
+/* Word scroller styles */
+.word-scroller-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: clamp(20px, 3vw, 34px);
+  color: hsl(var(--primary-foreground));
+}
+
+.word-scroller-title {
+  white-space: nowrap;
+}
+
+.word-scroller-words {
+  position: relative;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.word-scroller-track {
+  display: flex;
+  flex-direction: column;
+  animation: scrollWords 27s linear infinite;
+  will-change: transform;
+}
+
+.word-scroller-word {
+  color: hsl(var(--primary-foreground));
+  height: 1.2em;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+}
+
 @keyframes scrollWords {
-  0%      { transform: translateY(0); }
-  3.70%   { transform: translateY(0); }
-  5.56%   { transform: translateY(-1.2em); }
-  9.26%   { transform: translateY(-1.2em); }
-  11.11%  { transform: translateY(-2.4em); }
-  14.81%  { transform: translateY(-2.4em); }
-  16.67%  { transform: translateY(-3.6em); }
-  20.37%  { transform: translateY(-3.6em); }
-  22.22%  { transform: translateY(-4.8em); }
-  25.93%  { transform: translateY(-4.8em); }
-  27.78%  { transform: translateY(-6.0em); }
-  31.48%  { transform: translateY(-6.0em); }
-  33.33%  { transform: translateY(-7.2em); }
-  37.04%  { transform: translateY(-7.2em); }
-  38.89%  { transform: translateY(-8.4em); }
-  42.59%  { transform: translateY(-8.4em); }
-  44.44%  { transform: translateY(-9.6em); }
-  48.15%  { transform: translateY(-9.6em); }
-  50.00%  { transform: translateY(-10.8em); }
-  53.70%  { transform: translateY(-10.8em); }
-  55.56%  { transform: translateY(-12.0em); }
-  59.26%  { transform: translateY(-12.0em); }
-  61.11%  { transform: translateY(-13.2em); }
-  64.81%  { transform: translateY(-13.2em); }
-  66.67%  { transform: translateY(-14.4em); }
-  70.37%  { transform: translateY(-14.4em); }
-  72.22%  { transform: translateY(-15.6em); }
-  75.93%  { transform: translateY(-15.6em); }
-  77.78%  { transform: translateY(-16.8em); }
-  81.48%  { transform: translateY(-16.8em); }
-  83.33%  { transform: translateY(-18.0em); }
-  87.04%  { transform: translateY(-18.0em); }
-  88.89%  { transform: translateY(-19.2em); }
-  92.59%  { transform: translateY(-19.2em); }
-  94.44%  { transform: translateY(-20.4em); }
-  98.15%  { transform: translateY(-20.4em); }
-  100%    { transform: translateY(-21.6em); }
+  0%      { transform: translate3d(0, 0, 0); }
+  3.70%   { transform: translate3d(0, 0, 0); }
+  5.56%   { transform: translate3d(0, -1.2em, 0); }
+  9.26%   { transform: translate3d(0, -1.2em, 0); }
+  11.11%  { transform: translate3d(0, -2.4em, 0); }
+  14.81%  { transform: translate3d(0, -2.4em, 0); }
+  16.67%  { transform: translate3d(0, -3.6em, 0); }
+  20.37%  { transform: translate3d(0, -3.6em, 0); }
+  22.22%  { transform: translate3d(0, -4.8em, 0); }
+  25.93%  { transform: translate3d(0, -4.8em, 0); }
+  27.78%  { transform: translate3d(0, -6.0em, 0); }
+  31.48%  { transform: translate3d(0, -6.0em, 0); }
+  33.33%  { transform: translate3d(0, -7.2em, 0); }
+  37.04%  { transform: translate3d(0, -7.2em, 0); }
+  38.89%  { transform: translate3d(0, -8.4em, 0); }
+  42.59%  { transform: translate3d(0, -8.4em, 0); }
+  44.44%  { transform: translate3d(0, -9.6em, 0); }
+  48.15%  { transform: translate3d(0, -9.6em, 0); }
+  50.00%  { transform: translate3d(0, -10.8em, 0); }
+  53.70%  { transform: translate3d(0, -10.8em, 0); }
+  55.56%  { transform: translate3d(0, -12.0em, 0); }
+  59.26%  { transform: translate3d(0, -12.0em, 0); }
+  61.11%  { transform: translate3d(0, -13.2em, 0); }
+  64.81%  { transform: translate3d(0, -13.2em, 0); }
+  66.67%  { transform: translate3d(0, -14.4em, 0); }
+  70.37%  { transform: translate3d(0, -14.4em, 0); }
+  72.22%  { transform: translate3d(0, -15.6em, 0); }
+  75.93%  { transform: translate3d(0, -15.6em, 0); }
+  77.78%  { transform: translate3d(0, -16.8em, 0); }
+  81.48%  { transform: translate3d(0, -16.8em, 0); }
+  83.33%  { transform: translate3d(0, -18.0em, 0); }
+  87.04%  { transform: translate3d(0, -18.0em, 0); }
+  88.89%  { transform: translate3d(0, -19.2em, 0); }
+  92.59%  { transform: translate3d(0, -19.2em, 0); }
+  94.44%  { transform: translate3d(0, -20.4em, 0); }
+  98.15%  { transform: translate3d(0, -20.4em, 0); }
+  100%    { transform: translate3d(0, -21.6em, 0); }
+}
+
+@media (max-width: 768px) {
+  .word-scroller-loader {
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(18px, 5vw, 24px);
+  }
 }
 
 @keyframes pulse-glow {
