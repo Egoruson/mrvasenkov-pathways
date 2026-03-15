@@ -41,7 +41,7 @@ const HeroSection = () => {
             className="relative overflow-hidden"
             style={{ height: "1.2em", lineHeight: "1.2em" }}
           >
-            <div className="flex flex-col animate-[scrollWords_18s_linear_infinite]">
+            <div className="flex flex-col" style={{ animation: "scrollWords 27s linear infinite" }}>
               {[...words, ...words].map((word, i) => (
                 <span
                   key={i}
