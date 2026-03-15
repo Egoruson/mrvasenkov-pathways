@@ -60,10 +60,10 @@ const ProductsSection = () => {
             <button
               key={i}
               onClick={() => setSelected(i)}
-              className="product-card card-dark rounded-xl p-5 text-left cursor-pointer group"
+              className="product-card rounded-xl text-left cursor-pointer group"
             >
               <div className="product-card-circle" />
-              <p.icon className="w-8 h-8 mb-3 text-cta relative z-10 transition-colors duration-500 group-hover:text-cta" />
+              <p.icon className="product-card-icon" />
               <h3 className="product-card-title">{p.title}</h3>
               <span className="product-card-link">Подробнее</span>
             </button>
