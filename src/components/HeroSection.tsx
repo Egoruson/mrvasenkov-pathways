@@ -59,12 +59,16 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 mt-6">
             Промышленные поставки, логистика и таможенное оформление — полный цикл импорта из Китая
         </p>
-        <button
-          onClick={() => document.querySelector("#quiz")?.scrollIntoView({ behavior: "smooth" })}
-          className="cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-bold px-8 py-3 rounded-lg text-lg transition-all"
-        >
-          Оставить заявку
-        </button>
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={() => document.querySelector("#quiz")?.scrollIntoView({ behavior: "smooth" })}
+            className="cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-bold px-8 py-3 rounded-lg text-lg transition-all"
+          >
+            Оставить заявку
+          </button>
+        </div>
       </div>
     </section>
   );
