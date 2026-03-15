@@ -37,11 +37,11 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-black/50" />
       <div className="container relative z-10">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-primary-foreground leading-tight mb-4 text-center">
-          ООО «ЕТРЕЙД»
-        </h1>
-
         <div className="max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-primary-foreground leading-tight mb-4">
+            ООО «ЕТРЕЙД»
+          </h1>
+
           {/* Animated word scroller */}
           <div className="word-scroller-loader">
             <span className="word-scroller-title">Ваш надёжный поставщик</span>
@@ -58,10 +58,8 @@ const HeroSection = () => {
 
           <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 mt-6">
             Промышленные поставки, логистика и таможенное оформление — полный цикл импорта из Китая
-        </p>
-        </div>
+          </p>
 
-        <div className="text-center">
           <button
             onClick={() => document.querySelector("#quiz")?.scrollIntoView({ behavior: "smooth" })}
             className="cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-bold px-8 py-3 rounded-lg text-lg transition-all"
