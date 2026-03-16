@@ -4,8 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import QuizSection from "@/components/QuizSection";
-import ContactsSection from "@/components/ContactsSection";
-import Footer from "@/components/Footer";
+import UnifiedFooter from "@/components/UnifiedFooter";
 
 const Index = () => {
   return (
@@ -16,8 +15,7 @@ const Index = () => {
       <ProductsSection />
       <AdvantagesSection />
       <QuizSection />
-      <ContactsSection />
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 };
