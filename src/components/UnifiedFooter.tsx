@@ -158,7 +158,7 @@ const UnifiedFooter = () => {
                 Написать в Telegram
               </a>
             </div>
-            <p className="text-white/40 text-xs mt-3">
+            <p className="text-white/40 text-xs mt-3 hidden md:block">
               © {new Date().getFullYear()} ООО «ЕТРЕЙД». Все права защищены.
             </p>
           </div>
@@ -179,6 +179,11 @@ const UnifiedFooter = () => {
             </a>
           </div>
         </div>
+
+        {/* Mobile-only copyright */}
+        <p className="text-white/40 text-xs mt-6 md:hidden">
+          © {new Date().getFullYear()} ООО «ЕТРЕЙД». Все права защищены.
+        </p>
       </div>
     </footer>
   );
