@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
-import QuizSection from "@/components/QuizSection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 
 const Index = () => {
@@ -14,7 +13,6 @@ const Index = () => {
       <AboutSection />
       <ProductsSection />
       <AdvantagesSection />
-      <QuizSection />
       <UnifiedFooter />
     </div>
   );
