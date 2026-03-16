@@ -5,7 +5,6 @@ import logo from "@/assets/logo-white.png";
 const navItems = [
   { label: "О КОМПАНИИ", href: "#about" },
   { label: "ТОВАРЫ", href: "#products" },
-  { label: "ОТПРАВИТЬ ЗАПРОС", href: "#quiz" },
   { label: "КОНТАКТЫ", href: "#contacts" },
 ];
 
