@@ -166,7 +166,7 @@ const UnifiedFooter = () => {
           {/* Right — legal */}
           <div className="md:text-right flex flex-col">
             <p className="text-white/80 text-sm font-semibold">ООО «ЕТРЕЙД»</p>
-            <p className="text-white/50 text-xs mt-3"><span className="text-white/70">ИНН:</span> 2543174349</p>
+            <p className="text-white/50 text-xs mt-3 flex-1"><span className="text-white/70">ИНН:</span> 2543174349</p>
             <p className="text-white/50 text-xs mt-3"><span className="text-white/70">КПП:</span> 254301001</p>
             <p className="text-white/50 text-xs mt-3"><span className="text-white/70">ОГРН:</span> 1232500008454</p>
             <a
