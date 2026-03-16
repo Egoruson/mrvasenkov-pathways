@@ -135,7 +135,7 @@ const UnifiedFooter = () => {
           {/* Left — contacts + copyright */}
           <div className="flex flex-col">
             <p className="text-white/50 text-sm font-medium">Или свяжитесь с нами самостоятельно</p>
-            <div className="flex items-start gap-2 mt-3">
+            <div className="flex items-start gap-2 mt-3 flex-1">
               <MapPin className="w-4 h-4 text-cta mt-0.5 shrink-0" />
               <span className="text-white/70 text-sm">
                 690069, Приморский край, г.&nbsp;Владивосток, ул.&nbsp;Давыдова, д.&nbsp;14
@@ -166,7 +166,7 @@ const UnifiedFooter = () => {
           {/* Right — legal */}
           <div className="md:text-right flex flex-col">
             <p className="text-white/80 text-sm font-semibold">ООО «ЕТРЕЙД»</p>
-            <p className="text-white/50 text-xs mt-3"><span className="text-white/70">ИНН:</span> 2543174349</p>
+            <p className="text-white/50 text-xs mt-3 flex-1"><span className="text-white/70">ИНН:</span> 2543174349</p>
             <p className="text-white/50 text-xs mt-3"><span className="text-white/70">КПП:</span> 254301001</p>
             <p className="text-white/50 text-xs mt-3"><span className="text-white/70">ОГРН:</span> 1232500008454</p>
             <a
