@@ -8,7 +8,6 @@ const navItems = [
   { label: "ОТПРАВИТЬ ЗАПРОС", href: "#quiz" },
   { label: "КОНТАКТЫ", href: "#contacts" },
 ];
-];
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
