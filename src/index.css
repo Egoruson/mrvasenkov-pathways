@@ -75,6 +75,9 @@
   .cta-gradient {
     background: var(--cta-gradient);
   }
+  .footer-gradient {
+    background: linear-gradient(135deg, hsl(213 60% 25%), hsl(213 60% 15%));
+  }
   .cta-gradient-hover:hover {
     background: var(--cta-hover);
   }
