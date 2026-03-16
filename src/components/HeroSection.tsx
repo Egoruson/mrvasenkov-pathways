@@ -61,7 +61,7 @@ const HeroSection = () => {
           </p>
 
           <button
-            onClick={() => document.querySelector("#quiz")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.querySelector("#contacts")?.scrollIntoView({ behavior: "smooth" })}
             className="cta-gradient cta-gradient-hover animate-pulse-glow text-primary-foreground font-bold px-8 py-3 rounded-lg text-lg transition-all"
           >
             Оставить заявку
