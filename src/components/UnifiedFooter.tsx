@@ -1,5 +1,5 @@
-import { useState, FormEvent } from "react";
-import { MapPin, Mail, Send, Loader2 } from "lucide-react";
+import { useState, useRef, FormEvent } from "react";
+import { MapPin, Mail, Send, Loader2, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const UnifiedFooter = () => {
