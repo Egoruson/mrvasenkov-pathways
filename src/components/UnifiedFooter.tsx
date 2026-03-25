@@ -132,48 +132,56 @@ const UnifiedFooter = () => {
       {/* ── Bottom ── */}
       <div className="container py-8">
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Left — contacts + copyright */}
-          <div className="flex flex-col">
-            <p className="text-white/50 text-sm font-medium">Или свяжитесь с нами самостоятельно</p>
-            <div className="flex items-start gap-2 mt-3 flex-1">
-              <MapPin className="w-4 h-4 text-cta mt-0.5 shrink-0" />
-              <span className="text-white/70 text-sm">
-                690069, Приморский край, г.&nbsp;Владивосток, ул.&nbsp;Давыдова, д.&nbsp;14
-              </span>
+          {/* Left column */}
+          <div className="flex flex-col md:justify-between">
+            {/* Top — contacts */}
+            <div className="space-y-3">
+              <p className="text-white/50 text-sm font-medium">Или свяжитесь с нами самостоятельно</p>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-cta mt-0.5 shrink-0" />
+                <span className="text-white/70 text-sm">
+                  690069, Приморский край, г.&nbsp;Владивосток, ул.&nbsp;Давыдова, д.&nbsp;14
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-cta shrink-0" />
+                <a href="mailto:gm@etradeiss.ru" className="text-white/70 text-sm hover:text-white transition-colors">
+                  gm@etradeiss.ru
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Send className="w-4 h-4 text-cta shrink-0" />
+                <a
+                  href="https://t.me/vasenkov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 text-sm hover:text-white transition-colors"
+                >
+                  Написать в Telegram
+                </a>
+              </div>
             </div>
-            <div className="flex items-center gap-2 mt-3">
-              <Mail className="w-4 h-4 text-cta shrink-0" />
-              <a href="mailto:gm@etradeiss.ru" className="text-white/70 text-sm hover:text-white transition-colors">
-                gm@etradeiss.ru
-              </a>
-            </div>
-            <div className="flex items-center gap-2 mt-3">
-              <Send className="w-4 h-4 text-cta shrink-0" />
-              <a
-                href="https://t.me/vasenkov"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 text-sm hover:text-white transition-colors"
-              >
-                Написать в Telegram
-              </a>
-            </div>
-            <p className="text-white/40 text-xs mt-3 hidden md:block">
+            {/* Bottom — copyright */}
+            <p className="text-white/40 text-xs mt-6 hidden md:block">
               © {new Date().getFullYear()} ООО «ЕТРЕЙД». Все права защищены.
             </p>
           </div>
 
-          {/* Right — legal */}
-          <div className="md:text-right flex flex-col">
-            <p className="text-white/80 text-sm font-semibold">ООО «ЕТРЕЙД»</p>
-            <p className="text-white/50 text-xs mt-3 flex-1"><span className="text-white/70">ИНН:</span> 2543174349</p>
-            <p className="text-white/50 text-xs mt-3"><span className="text-white/70">КПП:</span> 254301001</p>
-            <p className="text-white/50 text-xs mt-3"><span className="text-white/70">ОГРН:</span> 1232500008454</p>
+          {/* Right column */}
+          <div className="flex flex-col md:justify-between md:text-right">
+            {/* Top — requisites */}
+            <div className="space-y-3">
+              <p className="text-white/80 text-sm font-semibold">ООО «ЕТРЕЙД»</p>
+              <p className="text-white/50 text-xs"><span className="text-white/70">ИНН:</span> 2543174349</p>
+              <p className="text-white/50 text-xs"><span className="text-white/70">КПП:</span> 254301001</p>
+              <p className="text-white/50 text-xs"><span className="text-white/70">ОГРН:</span> 1232500008454</p>
+            </div>
+            {/* Bottom — privacy */}
             <a
               href="/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/50 text-xs underline underline-offset-2 hover:text-white/80 transition-colors mt-3"
+              className="text-white/50 text-xs underline underline-offset-2 hover:text-white/80 transition-colors mt-6"
             >
               Политика конфиденциальности
             </a>
