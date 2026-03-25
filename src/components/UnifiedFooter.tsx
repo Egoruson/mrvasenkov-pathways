@@ -58,14 +58,15 @@ const UnifiedFooter = () => {
         body: JSON.stringify({
           name: form.name,
           email: form.email,
-          phone: form.phone,
+          phone: "+7" + phoneDigits,
           _replyto: form.email,
           _subject: "Новая заявка с сайта",
         }),
       });
       if (res.ok) {
         toast({ title: "Спасибо! Заявка отправлена", className: "bg-green-600 text-white border-green-700" });
-        setForm({ name: "", email: "", phone: "+7 " });
+        setForm({ name: "", email: "" });
+        setPhoneDigits("");
         setErrors({});
       } else {
         throw new Error();
@@ -117,13 +118,20 @@ const UnifiedFooter = () => {
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
             </div>
             <div>
-              <input
-                type="tel"
-                className={inputClass}
-                placeholder="+7 (000) 000-00-00"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: formatPhone(e.target.value) })}
-              />
+              <div className={`relative flex items-center rounded-lg border bg-white/10 transition-all ${phoneFocused ? "border-white/40 bg-white/15" : "border-white/20"} ${errors.phone ? "border-red-400/60" : ""}`}>
+                <Phone className="w-4 h-4 text-cta ml-4 shrink-0" />
+                <input
+                  ref={phoneRef}
+                  type="tel"
+                  className="w-full bg-transparent px-3 py-3 min-h-[48px] text-sm text-white font-mono placeholder:text-white/50 outline-none"
+                  placeholder="+7 (___) ___-__-__"
+                  value={phoneFocused || phoneDigits.length > 0 ? formatPhone(phoneDigits) : ""}
+                  onFocus={() => setPhoneFocused(true)}
+                  onBlur={() => setPhoneFocused(false)}
+                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  onKeyDown={handlePhoneKeyDown}
+                />
+              </div>
               {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
             </div>
 
