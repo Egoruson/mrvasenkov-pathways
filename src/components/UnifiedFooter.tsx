@@ -5,20 +5,35 @@ import { useToast } from "@/hooks/use-toast";
 const UnifiedFooter = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "+7 " });
+  const [form, setForm] = useState({ name: "", email: "" });
+  const [phoneDigits, setPhoneDigits] = useState("");
+  const [phoneFocused, setPhoneFocused] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const phoneRef = useRef<HTMLInputElement>(null);
 
-  const formatPhone = (value: string) => {
-    const digits = value.replace(/\D/g, "").slice(0, 11);
-    if (digits.length === 0) return "+7 ";
-    let result = "+7 ";
-    const d = digits.startsWith("7") ? digits.slice(1) : digits.startsWith("8") ? digits.slice(1) : digits;
-    if (d.length > 0) result += "(" + d.slice(0, 3);
-    if (d.length >= 3) result += ") ";
-    if (d.length > 3) result += d.slice(3, 6);
-    if (d.length > 6) result += "-" + d.slice(6, 8);
-    if (d.length > 8) result += "-" + d.slice(8, 10);
+  const formatPhone = (digits: string): string => {
+    const d = digits.slice(0, 10);
+    if (d.length === 0) return "+7 (___) ___-__-__";
+    let result = "+7 (";
+    for (let i = 0; i < 10; i++) {
+      if (i === 3) result += ") ";
+      if (i === 6 || i === 8) result += "-";
+      result += i < d.length ? d[i] : "_";
+    }
     return result;
+  };
+
+  const handlePhoneChange = (value: string) => {
+    const raw = value.replace(/\D/g, "");
+    const cleaned = raw.startsWith("7") ? raw.slice(1) : raw.startsWith("8") ? raw.slice(1) : raw;
+    setPhoneDigits(cleaned.slice(0, 10));
+  };
+
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace") {
+      e.preventDefault();
+      setPhoneDigits((prev) => prev.slice(0, -1));
+    }
   };
 
   const validate = () => {
@@ -26,9 +41,8 @@ const UnifiedFooter = () => {
     if (!form.name.trim()) e.name = "Введите имя";
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Введите корректный e-mail";
-    const digits = form.phone.replace(/\D/g, "");
-    if (!form.phone.trim() || digits.length < 10)
-      e.phone = "Введите корректный номер (минимум 10 цифр)";
+    if (phoneDigits.length < 10)
+      e.phone = "Введите полный номер телефона (10 цифр после +7)";
     setErrors(e);
     return Object.keys(e).length === 0;
   };
