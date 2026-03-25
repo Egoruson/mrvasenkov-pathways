@@ -172,9 +172,9 @@ const UnifiedFooter = () => {
             {/* Top — requisites */}
             <div className="space-y-3">
               <p className="text-white/80 text-sm font-semibold">ООО «ЕТРЕЙД»</p>
-              <p className="text-white/50 text-xs"><span className="text-white/70">ИНН:</span> 2543174349</p>
-              <p className="text-white/50 text-xs"><span className="text-white/70">КПП:</span> 254301001</p>
-              <p className="text-white/50 text-xs"><span className="text-white/70">ОГРН:</span> 1232500008454</p>
+              <p className="text-white/50 text-sm"><span className="text-white/70">ИНН:</span> 2543174349</p>
+              <p className="text-white/50 text-sm"><span className="text-white/70">КПП:</span> 254301001</p>
+              <p className="text-white/50 text-sm"><span className="text-white/70">ОГРН:</span> 1232500008454</p>
             </div>
             {/* Bottom — privacy */}
             <a
