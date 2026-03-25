@@ -1,24 +1,39 @@
-import { useState, FormEvent } from "react";
-import { MapPin, Mail, Send, Loader2 } from "lucide-react";
+import { useState, useRef, FormEvent } from "react";
+import { MapPin, Mail, Send, Loader2, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const UnifiedFooter = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "+7 " });
+  const [form, setForm] = useState({ name: "", email: "" });
+  const [phoneDigits, setPhoneDigits] = useState("");
+  const [phoneFocused, setPhoneFocused] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const phoneRef = useRef<HTMLInputElement>(null);
 
-  const formatPhone = (value: string) => {
-    const digits = value.replace(/\D/g, "").slice(0, 11);
-    if (digits.length === 0) return "+7 ";
-    let result = "+7 ";
-    const d = digits.startsWith("7") ? digits.slice(1) : digits.startsWith("8") ? digits.slice(1) : digits;
-    if (d.length > 0) result += "(" + d.slice(0, 3);
-    if (d.length >= 3) result += ") ";
-    if (d.length > 3) result += d.slice(3, 6);
-    if (d.length > 6) result += "-" + d.slice(6, 8);
-    if (d.length > 8) result += "-" + d.slice(8, 10);
+  const formatPhone = (digits: string): string => {
+    const d = digits.slice(0, 10);
+    if (d.length === 0) return "+7 (___) ___-__-__";
+    let result = "+7 (";
+    for (let i = 0; i < 10; i++) {
+      if (i === 3) result += ") ";
+      if (i === 6 || i === 8) result += "-";
+      result += i < d.length ? d[i] : "_";
+    }
     return result;
+  };
+
+  const handlePhoneChange = (value: string) => {
+    const raw = value.replace(/\D/g, "");
+    const cleaned = raw.startsWith("7") ? raw.slice(1) : raw.startsWith("8") ? raw.slice(1) : raw;
+    setPhoneDigits(cleaned.slice(0, 10));
+  };
+
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace") {
+      e.preventDefault();
+      setPhoneDigits((prev) => prev.slice(0, -1));
+    }
   };
 
   const validate = () => {
@@ -26,9 +41,8 @@ const UnifiedFooter = () => {
     if (!form.name.trim()) e.name = "Введите имя";
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Введите корректный e-mail";
-    const digits = form.phone.replace(/\D/g, "");
-    if (!form.phone.trim() || digits.length < 10)
-      e.phone = "Введите корректный номер (минимум 10 цифр)";
+    if (phoneDigits.length < 10)
+      e.phone = "Введите полный номер телефона (10 цифр после +7)";
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -44,14 +58,15 @@ const UnifiedFooter = () => {
         body: JSON.stringify({
           name: form.name,
           email: form.email,
-          phone: form.phone,
+          phone: "+7" + phoneDigits,
           _replyto: form.email,
           _subject: "Новая заявка с сайта",
         }),
       });
       if (res.ok) {
         toast({ title: "Спасибо! Заявка отправлена", className: "bg-green-600 text-white border-green-700" });
-        setForm({ name: "", email: "", phone: "+7 " });
+        setForm({ name: "", email: "" });
+        setPhoneDigits("");
         setErrors({});
       } else {
         throw new Error();
@@ -103,13 +118,20 @@ const UnifiedFooter = () => {
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
             </div>
             <div>
-              <input
-                type="tel"
-                className={inputClass}
-                placeholder="+7 (000) 000-00-00"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: formatPhone(e.target.value) })}
-              />
+              <div className={`relative flex items-center rounded-lg border bg-white/10 transition-all ${phoneFocused ? "border-white/40 bg-white/15" : "border-white/20"} ${errors.phone ? "border-red-400/60" : ""}`}>
+                <Phone className="w-4 h-4 text-cta ml-4 shrink-0" />
+                <input
+                  ref={phoneRef}
+                  type="tel"
+                  className="w-full bg-transparent px-3 py-3 min-h-[48px] text-sm text-white font-mono placeholder:text-white/50 outline-none"
+                  placeholder="+7 (___) ___-__-__"
+                  value={phoneFocused || phoneDigits.length > 0 ? formatPhone(phoneDigits) : ""}
+                  onFocus={() => setPhoneFocused(true)}
+                  onBlur={() => setPhoneFocused(false)}
+                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  onKeyDown={handlePhoneKeyDown}
+                />
+              </div>
               {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
             </div>
 
