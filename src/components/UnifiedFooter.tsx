@@ -51,7 +51,7 @@ const UnifiedFooter = () => {
       });
       if (res.ok) {
         toast({ title: "Спасибо! Заявка отправлена", className: "bg-green-600 text-white border-green-700" });
-        setForm({ name: "", email: "", phone: "" });
+        setForm({ name: "", email: "", phone: "+7 " });
         setErrors({});
       } else {
         throw new Error();
@@ -108,7 +108,7 @@ const UnifiedFooter = () => {
                 className={inputClass}
                 placeholder="+7 (000) 000-00-00"
                 value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                onChange={(e) => setForm({ ...form, phone: formatPhone(e.target.value) })}
               />
               {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
             </div>
