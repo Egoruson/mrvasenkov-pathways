@@ -5,8 +5,21 @@ import { useToast } from "@/hooks/use-toast";
 const UnifiedFooter = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "+7 " });
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 11);
+    if (digits.length === 0) return "+7 ";
+    let result = "+7 ";
+    const d = digits.startsWith("7") ? digits.slice(1) : digits.startsWith("8") ? digits.slice(1) : digits;
+    if (d.length > 0) result += "(" + d.slice(0, 3);
+    if (d.length >= 3) result += ") ";
+    if (d.length > 3) result += d.slice(3, 6);
+    if (d.length > 6) result += "-" + d.slice(6, 8);
+    if (d.length > 8) result += "-" + d.slice(8, 10);
+    return result;
+  };
 
   const validate = () => {
     const e: Record<string, string> = {};
